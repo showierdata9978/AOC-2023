@@ -14,6 +14,8 @@ for _ in range(times):
 print("Part 1:", (avg / times) * 1000, "ms")
 
 
+avg = 0
+
 for _ in range(times):
    start = time.time()
    main.part2()
