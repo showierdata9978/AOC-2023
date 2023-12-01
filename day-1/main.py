@@ -41,17 +41,28 @@ def get_numbers(l, part):
 	  
 	return (int(first) * 10) + int(n)
 
-sum = 0
-
-for l in lines:
+def part1():
 	
-	sum += get_numbers(l.strip(), 1)
+	sum = 0
 
-print(sum)
+	for l in lines:
+	
+		sum += get_numbers(l.strip(), 1)
 
-sum = 0 
-for l in lines:
+	return sum
 
-        sum += get_numbers(l.strip(), 2)
+def part2():
+	sum = 0 
+	for l in lines:
 
-print(sum)
+	        sum  += get_numbers(l.strip(), 2)
+
+	return sum
+
+def main():
+	print("Part 1:", part1())
+	print("Part 2:", part2())
+
+	
+if __name__ == "__main__":
+	main()
