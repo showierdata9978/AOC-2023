@@ -5,28 +5,26 @@ with open("input.txt", "r") as f:
 
 
 def parse_from_str(n):
-	if n.endswith("one"): return "1"
-	elif n.endswith("two"): return "2"
-	elif n.endswith("three"): return "3"	
-	elif n.endswith("four"): return "4"
-	elif n.endswith("five"): return "5"
-	elif n.endswith("six"): return "6"
-	elif n.endswith("seven"): return "7"
-	elif n.endswith("eight"): return "8"
-	elif n.endswith("nine"): return "9"
+	if n.endswith("one"): return 1
+	elif n.endswith("two"): return 2
+	elif n.endswith("three"): return 3	
+	elif n.endswith("four"): return 4
+	elif n.endswith("five"): return 5
+	elif n.endswith("six"): return 6
+	elif n.endswith("seven"): return 7
+	elif n.endswith("eight"): return 8
+	elif n.endswith("nine"): return 9
 	return 0
 
 def get_numbers(l, part):
 	first = None
 	parsed = ""
 	i = ''
-	c = 0
 	n = None
-	while c <= len(l) - 1:
-	  i = l[c]
-	  c += 1
+	for i in l:
 	  if i.isdigit():
 	    n = i
+	    parsed = ""
 	  elif part == 2:
 	    if i not in 'fgenohivwtursx': continue 
 	    parsed += i
@@ -41,19 +39,19 @@ def get_numbers(l, part):
 	  if first == None:
 	     first = n
 	  
-	return str(first), str(n)
+	return (int(first) * 10) + int(n)
 
 sum = 0
 
 for l in lines:
 	
-	sum += int("".join(get_numbers(l.strip(), 1)))
+	sum += get_numbers(l.strip(), 1)
 
 print(sum)
 
 sum = 0 
 for l in lines:
 
-        sum += int("".join(get_numbers(l.strip(), 2)))
+        sum += get_numbers(l.strip(), 2)
 
 print(sum)
