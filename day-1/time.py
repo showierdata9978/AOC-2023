@@ -11,11 +11,12 @@ for _ in range(times):
 	main.part1()
 	avg += (time.time() - start)
 
-print("Part 1:", avg / times)
+print("Part 1:", (avg / times) * 1000, "ms")
+
 
 for _ in range(times):
    start = time.time()
    main.part2()
    avg += (time.time() - start)
 
-print("Part 2:", avg / times)
+print("Part 2:", (avg / times) * 1000, "ms")
