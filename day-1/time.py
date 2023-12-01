@@ -2,6 +2,6 @@ import time
 
 start = time.time()
 
-import day1
+import main
 
 print(time.time() - start)
