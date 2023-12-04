@@ -1,6 +1,7 @@
 import time
 from part2 import part2
 from part1 import part1
+import part2 as p2
 
 def _main():
 	times = 1000
@@ -20,6 +21,7 @@ def _main():
 
 	for _ in range(times):
 		start = time.time()
+		p2.memory = {}
 		part2()
 		avg += (time.time() - start)
 
