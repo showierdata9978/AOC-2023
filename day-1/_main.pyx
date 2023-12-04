@@ -1,5 +1,10 @@
 import sys
 
+# getting endswith from c
+
+import cython
+
+
 if len(sys.argv) > 2:
 	file_p = sys.argv[1]
 else:
@@ -10,7 +15,7 @@ with open(file_p, "r") as f:
 
 
 
-def parse_from_str(n: str):
+cdef parse_from_str(n: str):
 	if n.endswith("one"): return 1
 	elif n.endswith("two"): return 2
 	elif n.endswith("three"): return 3
@@ -22,7 +27,7 @@ def parse_from_str(n: str):
 	elif n.endswith("nine"): return 9
 	return 0
 
-def get_numbers(l, part):
+cdef get_numbers(l, part):
 	first = None
 	parsed = ""
 	i = ''
